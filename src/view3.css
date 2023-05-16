@@ -1,0 +1,31 @@
+.view3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(77, 158, 182);
+  z-index: 8;
+  transform: rotateZ(0deg);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+  flex-direction: column;
+  /* visibility: hidden; */
+}
+
+.wrap {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrap img {
+  width: 40vw;
+  margin-right: 20px;
+}
+
+.wrap p {
+  text-align: justify;
+  color: #ffffff;
+}

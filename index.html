@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/view1.css" />
+    <link rel="stylesheet" href="./src/view2.css" />
+    <link rel="stylesheet" href="./src/view3.css" />
+    <link rel="stylesheet" href="./src/view4.css" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="views">
+      <div class="view1">
+        <span class="cssFont_1">Контроллер КЭШ-памяти</span>
+      </div>
+      <div class="view2">
+        <span class="cssFont_2">Система КЭШ-памяти</span>
+        <div class="schema"></div>
+        <p style="color: #fff;">
+          <b>Система кэш-памяти</b> процессора<i> состоит из</i> двух блоков
+          <i>контроллера кэш-памяти </i>и собственно <i>самой кэш-памяти</i>
+        </p>
+      </div>
+      <div class="view3">
+        <span class="cssFont_1">КЭШ-память процессора</span>
+        <div class="wrap">
+          <img src="./src/img/Level_kesh.drawio.svg" alt="" />
+          <p>
+            В большинстве процессоров используется трёхуровневая система
+            <b>кэша: </b><br />
+            <b>Память первого уровня (L1) <i>для каждого ядра - </i></b>очень
+            маленькая, но самая быстрая. Делится на кэш команд (содержит
+            информацию об операции, которой занимается ЦП) и кэш данных (над
+            которыми должны производится вычисления). <br />
+            <b>Память второго уровня (L2) <i>для каждого ядра - </i></b> немного
+            медленнее кэш-памяти L1, но объём её больше. <br />
+            <b
+              >Память третьего уровня (L3) <i>для всех ядер процессора - </i></b
+            >
+            ещё более объёмная, но и более медленная.
+          </p>
+        </div>
+      </div>
+      <div id="wrapper">
+        <div style="display: flex;">
+          <div class="cpu">
+            <div class="kesh_memory">
+              <span style="font-size: 30px;">КЭШ-память</span>
+              <div class="mem_wrapper">
+                <div class="kesh_memory_L1_L2">
+                  <div class="kesh_memory_L1">
+                    <div class="kesh_memory_L1_data">
+                      <span>L1<br />данные</span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                    </div>
+                    <div class="kesh_memory_L1_info">
+                      <span>L1<br />инф.</span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="kesh_memory_L2">
+                    <span>L2</span>
+                    <span
+                      ><svg
+                        width="60px"
+                        height="60px"
+                        viewBox="0 0 24.00 24.00"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000"
+                        stroke="#000000"
+                        transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke="#d72d2d"
+                          stroke-width="0.288"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title></title>
+                          <g id="Complete">
+                            <g id="arrow-right">
+                              <g>
+                                <polyline
+                                  data-name="Right"
+                                  fill="none"
+                                  id="Right-2"
+                                  points="16.4 7 21.5 12 16.4 17"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                ></polyline>
+                                <line
+                                  fill="none"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                  x1="2.5"
+                                  x2="19.2"
+                                  y1="12"
+                                  y2="12"
+                                ></line>
+                              </g>
+                            </g>
+                          </g>
+                        </g></svg
+                    ></span>
+                    <span
+                      ><svg
+                        width="60px"
+                        height="60px"
+                        viewBox="0 0 24.00 24.00"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000"
+                        stroke="#000000"
+                        transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke="#d72d2d"
+                          stroke-width="0.288"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title></title>
+                          <g id="Complete">
+                            <g id="arrow-right">
+                              <g>
+                                <polyline
+                                  data-name="Right"
+                                  fill="none"
+                                  id="Right-2"
+                                  points="16.4 7 21.5 12 16.4 17"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                ></polyline>
+                                <line
+                                  fill="none"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                  x1="2.5"
+                                  x2="19.2"
+                                  y1="12"
+                                  y2="12"
+                                ></line>
+                              </g>
+                            </g>
+                          </g>
+                        </g></svg
+                    ></span>
+                  </div>
+                </div>
+                <div class="kesh_memory_L3">
+                  <span>L3</span>
+                  <span
+                    ><svg
+                      width="50px"
+                      height="50px"
+                      viewBox="0 0 24.00 24.00"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#000000"
+                      stroke="#000000"
+                      transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke="#d72d2d"
+                        stroke-width="0.288"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <title></title>
+                        <g id="Complete">
+                          <g id="arrow-right">
+                            <g>
+                              <polyline
+                                data-name="Right"
+                                fill="none"
+                                id="Right-2"
+                                points="16.4 7 21.5 12 16.4 17"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.4"
+                              ></polyline>
+                              <line
+                                fill="none"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.4"
+                                x1="2.5"
+                                x2="19.2"
+                                y1="12"
+                                y2="12"
+                              ></line>
+                            </g>
+                          </g>
+                        </g>
+                      </g></svg
+                  ></span>
+                  <span
+                    ><svg
+                      width="50px"
+                      height="50px"
+                      viewBox="0 0 24.00 24.00"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#000000"
+                      stroke="#000000"
+                      transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke="#d72d2d"
+                        stroke-width="0.288"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <title></title>
+                        <g id="Complete">
+                          <g id="arrow-right">
+                            <g>
+                              <polyline
+                                data-name="Right"
+                                fill="none"
+                                id="Right-2"
+                                points="16.4 7 21.5 12 16.4 17"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.4"
+                              ></polyline>
+                              <line
+                                fill="none"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2.4"
+                                x1="2.5"
+                                x2="19.2"
+                                y1="12"
+                                y2="12"
+                              ></line>
+                            </g>
+                          </g>
+                        </g>
+                      </g></svg
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="alu_contr">
+              <div class="alu">
+                <span
+                  >Ядро 1 <br />. . . <br />
+                  Ядро N</span
+                >
+              </div>
+              <div class="controller_kesh_memory">
+                <span>Контроллер КЭШ памяти</span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="ozu"><span>Оперативная память</span></div>
+        </div>
+      </div>
+      <div id="wrapper2">
+        <div style="display: flex; justify-content: center;">
+          <div class="cpu cpu2">
+            <div class="kesh_memory km">
+              <span style="font-size: 30px;">КЭШ-память</span>
+              <div class="mem_wrapper">
+                <div class="kesh_memory_L1_L2">
+                  <div class="kesh_memory_L1">
+                    <div class="kesh_memory_L1_data kml1">
+                      <span>L1<span class="rec"></span></span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                      <span
+                        ><svg
+                          width="60px"
+                          height="60px"
+                          viewBox="0 0 24.00 24.00"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="#000000"
+                          stroke="#000000"
+                          transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke="#d72d2d"
+                            stroke-width="0.288"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <title></title>
+                            <g id="Complete">
+                              <g id="arrow-right">
+                                <g>
+                                  <polyline
+                                    data-name="Right"
+                                    fill="none"
+                                    id="Right-2"
+                                    points="16.4 7 21.5 12 16.4 17"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                  ></polyline>
+                                  <line
+                                    fill="none"
+                                    stroke="#000000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2.4"
+                                    x1="2.5"
+                                    x2="19.2"
+                                    y1="12"
+                                    y2="12"
+                                  ></line>
+                                </g>
+                              </g>
+                            </g>
+                          </g></svg
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="kesh_memory_L2 kml2">
+                    <span>L2<span class="rec"></span></span>
+                    <span
+                      ><svg
+                        width="60px"
+                        height="60px"
+                        viewBox="0 0 24.00 24.00"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000"
+                        stroke="#000000"
+                        transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke="#d72d2d"
+                          stroke-width="0.288"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title></title>
+                          <g id="Complete">
+                            <g id="arrow-right">
+                              <g>
+                                <polyline
+                                  data-name="Right"
+                                  fill="none"
+                                  id="Right-2"
+                                  points="16.4 7 21.5 12 16.4 17"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                ></polyline>
+                                <line
+                                  fill="none"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                  x1="2.5"
+                                  x2="19.2"
+                                  y1="12"
+                                  y2="12"
+                                ></line>
+                              </g>
+                            </g>
+                          </g>
+                        </g></svg
+                    ></span>
+                    <span
+                      ><svg
+                        width="60px"
+                        height="60px"
+                        viewBox="0 0 24.00 24.00"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#000000"
+                        stroke="#000000"
+                        transform="matrix(1, 0, 0, 1, 0, 0)rotate(270)"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke="#d72d2d"
+                          stroke-width="0.288"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title></title>
+                          <g id="Complete">
+                            <g id="arrow-right">
+                              <g>
+                                <polyline
+                                  data-name="Right"
+                                  fill="none"
+                                  id="Right-2"
+                                  points="16.4 7 21.5 12 16.4 17"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                ></polyline>
+                                <line
+                                  fill="none"
+                                  stroke="#000000"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2.4"
+                                  x1="2.5"
+                                  x2="19.2"
+                                  y1="12"
+                                  y2="12"
+                                ></line>
+                              </g>
+                            </g>
+                          </g>
+                        </g></svg
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alu_contr">
+              <div class="controller_kesh_memory ckm">
+                <span>Контроллер КЭШ памяти</span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(-1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+                <span
+                  ><svg
+                    width="50px"
+                    height="50px"
+                    viewBox="0 0 24.00 24.00"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    stroke="#000000"
+                    transform="matrix(1, 0, 0, 1, 0, 0)rotate(180)"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke="#d72d2d"
+                      stroke-width="0.288"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <title></title>
+                      <g id="Complete">
+                        <g id="arrow-right">
+                          <g>
+                            <polyline
+                              data-name="Right"
+                              fill="none"
+                              id="Right-2"
+                              points="16.4 7 21.5 12 16.4 17"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                            ></polyline>
+                            <line
+                              fill="none"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.4"
+                              x1="2.5"
+                              x2="19.2"
+                              y1="12"
+                              y2="12"
+                            ></line>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="ozu">
+            <span>Оперативная память <span class="rec"></span></span>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="left"><span>&#8592;</span></button>
+        <button class="right"><span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>

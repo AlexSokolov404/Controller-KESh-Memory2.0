@@ -1,0 +1,46 @@
+.view2 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(108, 187, 211);
+  z-index: 9;
+  transform: rotateZ(0deg);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+  flex-direction: column;
+  /* visibility: hidden; */
+}
+
+.cssFont_2 {
+  font-family: Times New Roman;
+  font-size: 64px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: white;
+  margin-top: 20px;
+}
+
+.schema {
+  margin-top: 20px;
+}
+
+.schema img {
+  fill-opacity: 0.5; /* прозрачность заливки */
+  stroke: #ff6c00; /* цвет обводки */
+  stroke-width: 10px; /* толщина обводки */
+  stroke-opacity: 0.8;
+  width: 60vw;
+  /* transform: scale(1.4); */
+}
+
+.view2 p {
+  width: 80vw;
+}

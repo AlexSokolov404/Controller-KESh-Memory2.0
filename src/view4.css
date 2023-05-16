@@ -1,0 +1,13 @@
+.view4 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(76, 170, 199);
+  z-index: 7;
+  transform: rotateZ(0deg);
+  transform-origin: left bottom;
+  transition: transform 1s ease;
+}
